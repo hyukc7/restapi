@@ -10,7 +10,7 @@ eval $(minikube docker-env)
 
 # Define variables
 DOCKER_IMAGE_NAME="restapi"
-DOCKER_IMAGE_TAG=$(date +"%Y%m%d%H%M%S")
+DOCKER_IMAGE_TAG=$(git rev-parse --short HEAD)-$(date +%s)
 DOCKER_BUILD_CONTEXT="."
 
 # Build Docker image

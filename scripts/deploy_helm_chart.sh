@@ -13,4 +13,7 @@ else
   helm install $RELEASE_NAME $CHART_NAME-$CHART_VERSION.tgz --namespace $NAMESPACE
 fi
 
-kubectl port-forward svc/my-app-chart-service 8084:8080
+#after hyperkit is used not needed.
+#sleep 5
+
+#kubectl port-forward svc/my-app-chart-service 8084:8080
