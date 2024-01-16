@@ -20,4 +20,5 @@ class EmployeeInit {
             log.info("Preloading " + repository.save(new Employee("James Do", "Business Analyst")));
         };
     }
+
 }

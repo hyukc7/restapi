@@ -1,5 +1,5 @@
 image:
   repository: "restapi"
-  tag: "fcdd26f-1705419219"
+  tag: "ba971a9-1705437517"
 ingress:
   host: "hyukrestapi.com"
