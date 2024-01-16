@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-chart-deployment
+  labels:
+    app.kubernetes.io/name: my-app-chart
+    app.kubernetes.io/instance: my-app-chart
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app-chart-deployment
+  template:
+    metadata:
+      labels:
+        app: my-app-chart-deployment
+    spec:
+      containers:
+        - name: my-app-chart-container
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

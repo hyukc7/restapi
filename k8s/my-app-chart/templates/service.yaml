@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-chart-service
+  labels:
+    app.kubernetes.io/name: my-app-chart
+    app.kubernetes.io/instance: my-app-chart
+    app.kubernetes.io/managed-by: Helm
+spec:
+  selector:
+    app: my-app-chart-deployment
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: NodePort
